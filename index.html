@@ -41,6 +41,24 @@
                 else { window.addEventListener('load', async_load, false); }
             })();
         </script>
+
+        <script type="text/javascript">
+            // Parse the URL
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+            // Give the URL parameters variable names
+            var company = getParameterByName('Company');
+            var custom = getParameterByName('custom_test');
+            
+
+            document.cookie = `cookie1=${company};cookie2=${custom}`;
+
+        </script>
+
     </head>
     <body>
         <nav>

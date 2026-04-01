@@ -73,12 +73,16 @@
             var term = getParameterByName('utm_term');
             var custom = getParameterByName('custom_test');
 
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+
+
             // Put the variable names into the hidden fields in the form.
-            document.getElementsByName("utm_source").value = source;
-            document.getElementsByName("utm_medium").value = medium;
-            document.getElementsByName("utm_campaign").value = campaign;
-            document.getElementsByName("utm_term").value = term;
-            document.getElementsByName("custom_test").value = custom;
+            document.getElementsByName("Company").value = getCookie('cookie1');
+            document.getElementsByName("custom_test").value = getCookie("cookie2");
         </script>
     </body> 
 </html>
