@@ -52,37 +52,6 @@
         <h1>Form 1</h1>
 
         <iframe src="https://go.delros.ca/l/1128903/2026-01-13/8xwc75" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0" id="formiframe"></iframe>
-        
-        <script type="text/javascript">
-            var iframe = document.getElementById('formiframe');
-            iframe.src = iframe.src + window.location.search;
-        </script>
-
-        <script type="text/javascript">
-            // Parse the URL
-            function getParameterByName(name) {
-                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                    results = regex.exec(location.search);
-                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-            }
-            // Give the URL parameters variable names
-            var source = getParameterByName('utm_source');
-            var medium = getParameterByName('utm_medium');
-            var campaign = getParameterByName('utm_campaign');
-            var term = getParameterByName('utm_term');
-            var custom = getParameterByName('custom_test');
-
-            function getCookie(name) {
-                const value = `; ${document.cookie}`;
-                const parts = value.split(`; ${name}=`);
-                if (parts.length === 2) return parts.pop().split(';').shift();
-            }
-
-
-            // Put the variable names into the hidden fields in the form.
-            document.getElementsByName("Company").value = getCookie('cookie1');
-
-        </script>
+ 
     </body> 
 </html>
